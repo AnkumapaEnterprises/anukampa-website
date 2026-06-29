@@ -50,13 +50,21 @@ nav{
 
     position:fixed;
 
-    top:0;
+    top:20px;
 
-    left:0;
+    left:50%;
 
-    width:100%;
+    transform:translateX(-50%);
 
-    background:#ffffff;
+    width:92%;
+
+    max-width:1250px;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
 
     display:flex;
 
@@ -64,9 +72,11 @@ nav{
 
     align-items:center;
 
-    padding:18px 8%;
+    padding:18px 35px;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    border-radius:18px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.10);
 
     z-index:999;
 
@@ -178,7 +188,12 @@ header{
 
     text-align:center;
 
-    background:linear-gradient(135deg,#123C84,#1b58c7);
+    background:
+linear-gradient(
+135deg,
+#071739 0%,
+#123C84 55%,
+#2563EB 100%);
 
     color:white;
 
@@ -576,6 +591,87 @@ to{
 opacity:1;
 
 transform:translateY(0);
+
+}
+
+}
+/* ==========================
+   TRUST STRIP
+========================== */
+
+.trust-strip{
+
+background:white;
+
+padding:35px 8%;
+
+}
+
+.trust-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.trust-card{
+
+background:#fff;
+
+padding:28px;
+
+border-radius:16px;
+
+text-align:center;
+
+box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.trust-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.trust-card h3{
+
+color:#123C84;
+
+margin-bottom:12px;
+
+font-size:22px;
+
+}
+
+.trust-card p{
+
+font-size:15px;
+
+color:#666;
+
+}
+
+@media(max-width:900px){
+
+.trust-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.trust-grid{
+
+grid-template-columns:1fr;
 
 }
 
