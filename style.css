@@ -120,27 +120,33 @@ nav ul a:hover{
 
 .btn{
 
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     background:#123C84;
 
-    color:white;
+    color:#fff;
 
-    padding:14px 28px;
+    padding:15px 34px;
 
-    border-radius:50px;
-
-    transition:.3s;
-
-    display:inline-block;
+    border-radius:999px;
 
     font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 12px 30px rgba(18,60,132,.25);
 
 }
 
 .btn:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-4px);
 
-    background:#0e2f69;
+    box-shadow:0 20px 45px rgba(18,60,132,.35);
 
 }
 
@@ -189,15 +195,17 @@ header{
     text-align:center;
 
     background:
-linear-gradient(
-135deg,
-#071739 0%,
-#123C84 55%,
-#2563EB 100%);
+    radial-gradient(circle at top right, rgba(255,255,255,.12), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(255,255,255,.08), transparent 25%),
+    linear-gradient(135deg,#071739 0%,#123C84 55%,#2563EB 100%);
 
     color:white;
 
-    padding:120px 8% 80px;
+    padding:140px 8% 100px;
+
+    overflow:hidden;
+
+    position:relative;
 
 }
 
@@ -227,21 +235,27 @@ linear-gradient(
 
 .hero h1{
 
-    font-size:72px;
+    font-size:74px;
 
-    line-height:1.15;
+    line-height:1.08;
 
-    margin-bottom:30px;
+    margin-bottom:28px;
+
+    font-weight:800;
+
+    letter-spacing:-2px;
 
 }
 
 .hero-text{
 
-    font-size:21px;
+    font-size:22px;
 
-    opacity:.95;
+    max-width:760px;
 
-    margin-bottom:45px;
+    margin:0 auto 45px;
+
+    opacity:.92;
 
 }
 
@@ -700,5 +714,24 @@ grid-template-columns:1fr 1fr;
 grid-template-columns:1fr;
 
 }
+
+}
+.hero h1,
+.hero-text,
+.hero-buttons{
+
+    animation:fadeUp .9s ease both;
+
+}
+
+.hero-text{
+
+    animation-delay:.15s;
+
+}
+
+.hero-buttons{
+
+    animation-delay:.3s;
 
 }
