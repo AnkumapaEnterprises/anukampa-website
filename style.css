@@ -190,6 +190,10 @@ header{
 
     max-width:900px;
 
+    margin:auto;
+
+    animation:fadeUp 1s ease;
+
 }
 
 .small-title{
@@ -555,5 +559,24 @@ section:nth-child(even){
 section:nth-child(odd){
 
     background:#f8fafc;
+
+}
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 }
