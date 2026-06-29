@@ -393,3 +393,106 @@ padding:70px 25px;
     line-height:1.8;
 
 }
+/* ==========================
+   WHY ANUKAMPA
+========================== */
+
+#why{
+    background:#f8fafc;
+}
+
+.center{
+    max-width:800px;
+    margin:0 auto 50px;
+    text-align:center;
+    color:#666;
+    font-size:18px;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.why-grid div{
+    background:#fff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.why-grid div:hover{
+    transform:translateY(-8px);
+}
+
+.why-grid h3{
+    color:#123C84;
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.why-grid p{
+    color:#666;
+    line-height:1.8;
+}
+
+/* ==========================
+   ABOUT
+========================== */
+
+#about{
+    max-width:1000px;
+    margin:auto;
+}
+
+#about p{
+    margin-bottom:25px;
+    color:#555;
+    font-size:18px;
+    line-height:1.9;
+}
+
+blockquote{
+    margin-top:40px;
+    background:#123C84;
+    color:white;
+    padding:35px;
+    border-radius:16px;
+    text-align:center;
+    font-size:24px;
+    font-weight:600;
+}
+
+/* ==========================
+   CONTACT
+========================== */
+
+#contact{
+    background:#123C84;
+    color:white;
+    text-align:center;
+}
+
+#contact h2{
+    color:white;
+}
+
+#contact p{
+    max-width:700px;
+    margin:20px auto 40px;
+    font-size:20px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    background:#0d1b2a;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
