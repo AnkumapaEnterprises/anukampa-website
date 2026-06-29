@@ -496,3 +496,64 @@ footer{
     text-align:center;
     padding:30px;
 }
+/* ==========================
+   GLOBAL CONTAINER
+========================== */
+
+.container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ==========================
+   SECTION TITLE
+========================== */
+
+section h2{
+
+    position:relative;
+
+    margin-bottom:20px;
+
+}
+
+section h2::after{
+
+    content:"";
+
+    width:70px;
+
+    height:4px;
+
+    background:#123C84;
+
+    display:block;
+
+    margin:18px auto;
+
+    border-radius:20px;
+
+}
+
+/* ==========================
+   PAGE BACKGROUNDS
+========================== */
+
+body{
+
+    background:#f8fafc;
+
+}
+
+section:nth-child(even){
+
+    background:white;
+
+}
+
+section:nth-child(odd){
+
+    background:#f8fafc;
+
+}
