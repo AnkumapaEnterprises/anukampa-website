@@ -1,0 +1,341 @@
+/* ==========================
+   ANUKAMPA ENTERPRISES
+   ========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:#2d3748;
+    background:#ffffff;
+    line-height:1.7;
+}
+
+img{
+    max-width:100%;
+}
+
+a{
+    text-decoration:none;
+}
+
+section{
+    padding:90px 8%;
+}
+
+h1,h2,h3{
+    font-weight:700;
+}
+
+h2{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:20px;
+    color:#123C84;
+}
+
+/* ==========================
+   NAVIGATION
+   ========================== */
+
+nav{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    background:#ffffff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    z-index:999;
+
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:800;
+
+    color:#123C84;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+nav ul a{
+
+    color:#333;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+nav ul a:hover{
+
+    color:#123C84;
+
+}
+
+.btn{
+
+    background:#123C84;
+
+    color:white;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    transition:.3s;
+
+    display:inline-block;
+
+    font-weight:600;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    background:#0e2f69;
+
+}
+
+.btn-outline{
+
+    border:2px solid #123C84;
+
+    color:#123C84;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    margin-left:15px;
+
+    transition:.3s;
+
+    display:inline-block;
+
+    font-weight:600;
+
+}
+
+.btn-outline:hover{
+
+    background:#123C84;
+
+    color:white;
+
+}
+
+/* ==========================
+   HERO
+   ========================== */
+
+header{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:linear-gradient(135deg,#123C84,#1b58c7);
+
+    color:white;
+
+    padding:120px 8% 80px;
+
+}
+
+.hero{
+
+    max-width:900px;
+
+}
+
+.small-title{
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-size:14px;
+
+    opacity:.9;
+
+    margin-bottom:20px;
+
+}
+
+.hero h1{
+
+    font-size:64px;
+
+    line-height:1.15;
+
+    margin-bottom:30px;
+
+}
+
+.hero-text{
+
+    font-size:21px;
+
+    opacity:.95;
+
+    margin-bottom:45px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.hero .btn{
+
+    background:white;
+
+    color:#123C84;
+
+}
+
+.hero .btn:hover{
+
+    background:#f2f2f2;
+
+}
+
+.hero .btn-outline{
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+.hero .btn-outline:hover{
+
+    background:white;
+
+    color:#123C84;
+
+}
+
+/* ==========================
+   RESPONSIVE
+   ========================== */
+
+@media(max-width:900px){
+
+nav{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero-text{
+
+font-size:18px;
+
+}
+
+h2{
+
+font-size:34px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.btn-outline{
+
+margin-left:0;
+
+}
+
+section{
+
+padding:70px 25px;
+
+}
+
+}
