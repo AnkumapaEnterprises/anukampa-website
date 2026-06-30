@@ -1,65 +1,146 @@
+// ======================================
+// ANUKAMPA WEBSITE
+// Main JavaScript
+// ======================================
+
+// Google Apps Script URL
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwCiHtA8ZX9G1r6XrFF3MIJiho1j88JNccy9Y9jidYtUfAxqw8myiUMbv5_sCSK_9fY/exec";
+
+
+// ======================================
+// Smooth Scrolling
+// ======================================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if(target){
+
+            target.scrollIntoView({
+
+                behavior:"smooth"
+
+            });
+
+        }
+
+    });
+
+});
+
+
+// ======================================
+// Scroll Reveal Animation
+// ======================================
+
+const reveals = document.querySelectorAll("section");
+
+function reveal(){
+
+    const trigger = window.innerHeight * 0.85;
+
+    reveals.forEach(section=>{
+
+        const top = section.getBoundingClientRect().top;
+
+        if(top < trigger){
+
+            section.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", reveal);
+
+reveals.forEach(section=>{
+
+    section.classList.add("reveal");
+
+});
+
+reveal();
+
+
+// ======================================
+// Contact Form Submission
+// ======================================
 
 const form = document.getElementById("contactForm");
 
-form.addEventListener("submit", async (e) => {
+if(form){
 
-    e.preventDefault();
+    form.addEventListener("submit", async function(e){
 
-    const button = form.querySelector("button");
+        e.preventDefault();
 
-    button.disabled = true;
+        const button = form.querySelector("button");
 
-    button.textContent = "Submitting...";
+        button.disabled = true;
 
-    const data = {
+        button.innerHTML = "Submitting...";
 
-        name: form.name.value,
+        const data = {
 
-        company: form.company.value,
+            name: form.name.value,
 
-        email: form.email.value,
+            company: form.company.value,
 
-        mobile: form.mobile.value,
+            email: form.email.value,
 
-        service: form.service.value,
+            mobile: form.mobile.value,
 
-        message: form.message.value
+            service: form.service.value,
 
-    };
+            message: form.message.value
 
-    try{
+        };
 
-        await fetch(SCRIPT_URL,{
+        try{
 
-            method:"POST",
+            const response = await fetch(SCRIPT_URL,{
 
-            redirect:"follow",
+                method:"POST",
 
-            headers:{
-                "Content-Type":"text/plain;charset=utf-8"
-            },
+                headers:{
+                    "Content-Type":"text/plain;charset=utf-8"
+                },
 
-            body:JSON.stringify(data)
+                body: JSON.stringify(data)
 
-        });
+            });
 
-        alert("Thank you! Your enquiry has been submitted successfully.");
+            if(response.ok){
 
-        form.reset();
+                alert("✅ Thank you! Your enquiry has been submitted successfully.");
 
-    }
+                form.reset();
 
-    catch(error){
+            }else{
 
-        console.error(error);
+                alert("❌ Unable to submit your enquiry.");
 
-        alert("Unable to submit the enquiry. Please try again.");
+            }
 
-    }
+        }catch(error){
 
-    button.disabled = false;
+            console.error(error);
 
-    button.textContent = "Book Free Consultation";
+            alert("❌ Something went wrong. Please try again.");
 
-});
+        }
+
+        button.disabled = false;
+
+        button.innerHTML = "Book Free Consultation";
+
+    });
+
+}
