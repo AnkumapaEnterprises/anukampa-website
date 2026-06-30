@@ -150,7 +150,7 @@ if(form){
 
 const bookingModal = document.getElementById("bookingModal");
 
-const bookingButtons = document.querySelectorAll('a[href="#contact"]');
+const bookingButtons = document.querySelectorAll(".consultation-btn");
 
 const closeBooking = document.querySelector(".close-modal");
 
