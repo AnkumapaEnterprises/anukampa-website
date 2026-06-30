@@ -609,7 +609,55 @@ Email Us
 </footer>
 
 <script src="script.js"></script>
+<!-- Consultation Booking Modal -->
 
+<div id="bookingModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-modal">&times;</span>
+
+<h2>Book a Consultation</h2>
+
+<form id="bookingForm">
+
+<input type="text" id="bname" placeholder="Your Name" required>
+
+<input type="text" id="bcompany" placeholder="Company Name">
+
+<input type="email" id="bemail" placeholder="Email" required>
+
+<input type="tel" id="bmobile" placeholder="Mobile Number" required>
+
+<select id="bservice">
+
+<option>Business Consultation</option>
+
+<option>Virtual CFO</option>
+
+<option>Recruitment Strategy</option>
+
+<option>Compliance Advisory</option>
+
+<option>Business Growth Planning</option>
+
+</select>
+
+<input type="date" id="bdate" required>
+
+<input type="time" id="btime" required>
+
+<textarea id="bagenda" rows="4" placeholder="Brief Agenda"></textarea>
+
+<button type="submit" class="btn">
+Book Consultation
+</button>
+
+</form>
+
+</div>
+
+</div>
 </body>
 
 </html>
