@@ -1,51 +1,65 @@
-// Smooth Scrolling
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwCiHtA8ZX9G1r6XrFF3MIJiho1j88JNccy9Y9jidYtUfAxqw8myiUMbv5_sCSK_9fY/exec";
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+const form = document.getElementById("contactForm");
 
-    anchor.addEventListener("click", function(e) {
+form.addEventListener("submit", async (e) => {
 
-        e.preventDefault();
+    e.preventDefault();
 
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
+    const button = form.querySelector("button");
 
-            behavior:"smooth"
+    button.disabled = true;
+
+    button.textContent = "Submitting...";
+
+    const data = {
+
+        name: form.name.value,
+
+        company: form.company.value,
+
+        email: form.email.value,
+
+        mobile: form.mobile.value,
+
+        service: form.service.value,
+
+        message: form.message.value
+
+    };
+
+    try{
+
+        await fetch(SCRIPT_URL,{
+
+            method:"POST",
+
+            redirect:"follow",
+
+            headers:{
+                "Content-Type":"text/plain;charset=utf-8"
+            },
+
+            body:JSON.stringify(data)
 
         });
 
-    });
+        alert("Thank you! Your enquiry has been submitted successfully.");
 
-});
+        form.reset();
 
+    }
 
+    catch(error){
 
-// Scroll Reveal
+        console.error(error);
 
-const reveals = document.querySelectorAll("section");
+        alert("Unable to submit the enquiry. Please try again.");
 
-window.addEventListener("scroll", reveal);
+    }
 
-reveal();
+    button.disabled = false;
 
-function reveal(){
-
-    const trigger = window.innerHeight * 0.85;
-
-    reveals.forEach(section=>{
-
-        const top = section.getBoundingClientRect().top;
-
-        if(top < trigger){
-
-            section.classList.add("active");
-
-        }
-
-    });
-
-}
-
-reveals.forEach(section=>{
-
-    section.classList.add("reveal");
+    button.textContent = "Book Free Consultation";
 
 });
