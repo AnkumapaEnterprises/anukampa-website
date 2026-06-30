@@ -144,3 +144,40 @@ if(form){
     });
 
 }
+/* ==========================
+   BOOK CONSULTATION MODAL
+========================== */
+
+const bookingModal = document.getElementById("bookingModal");
+
+const bookingButtons = document.querySelectorAll('a[href="#contact"]');
+
+const closeBooking = document.querySelector(".close-modal");
+
+bookingButtons.forEach(btn => {
+
+    btn.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        bookingModal.style.display="flex";
+
+    });
+
+});
+
+closeBooking.onclick=function(){
+
+    bookingModal.style.display="none";
+
+}
+
+window.onclick=function(e){
+
+    if(e.target==bookingModal){
+
+        bookingModal.style.display="none";
+
+    }
+
+}
